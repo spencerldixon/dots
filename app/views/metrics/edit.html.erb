@@ -2,5 +2,5 @@
 
 <%= render 'form', metric: @metric %>
 
-<%= link_to 'Show', @metric %> |
-<%= link_to 'Back', metrics_path %>
+<%= link_to 'Show', track_metric_path(@track, @metric) %> |
+<%= link_to 'Back', track_metrics_path(@track) %>
