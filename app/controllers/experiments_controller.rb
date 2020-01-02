@@ -45,7 +45,7 @@ class ExperimentsController < ApplicationController
   def update
     respond_to do |format|
       if @experiment.update(experiment_params)
-        format.html { redirect_to @experiment, notice: 'Experiment was successfully updated.' }
+        format.html { redirect_to track_experiment_path(@track, @experiment), notice: 'Experiment was successfully updated.' }
         format.json { render :show, status: :ok, location: @experiment }
       else
         format.html { render :edit }
