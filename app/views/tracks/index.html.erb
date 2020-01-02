@@ -1,18 +1,22 @@
 <h1 class="display-4 mb-4">tracks</h1>
 
-<% @tracks.in_groups_of(3) do |group| %>
-  <div class="row mb-4">
-    <% group.each do |track| %>
-      <div class="col">
-        <%= render 'tracks/card',
-          track:              track,
-          experiments_count:  track&.experiments&.size,
-          metrics_count:      track&.metrics&.size,
-          dots_count:         track&.dots&.size
-        %>
-      </div>
-    <% end %>
-  </div>
+<% if @tracks.any? %>
+  <% @tracks.in_groups_of(3) do |group| %>
+    <div class="row mb-4">
+      <% group.each do |track| %>
+        <div class="col">
+          <%= render 'tracks/card',
+            track:              track,
+            experiments_count:  track&.experiments&.size,
+            metrics_count:      track&.metrics&.size,
+            dots_count:         track&.dots&.size
+          %>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+<% else %>
+  <p class="lead">You currently have no tracks</p>
 <% end %>
 
 <br>
