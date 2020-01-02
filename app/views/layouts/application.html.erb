@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>dots.</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <%= render 'layouts/navigation' %>
+
+    <div class="container mt-4">
+      <%= yield %>
+    </div>
+
+    <%= render 'layouts/new_dot_modal', dot: Dot.new %>
+  </body>
+</html>

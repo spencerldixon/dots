@@ -1,0 +1,32 @@
+<%= form_with(model: [@track, metric], local: true) do |form| %>
+  <% if metric.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(metric.errors.count, "error") %> prohibited this metric from being saved:</h2>
+
+      <ul>
+        <% metric.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= form.label :name %>
+    <%= form.text_field :name, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :description %>
+    <%= form.text_area :description, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :unit, 'Unit (of measurement, eg. Kg, Lbs)' %>
+    <%= form.text_field :unit, class: 'form-control' %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit class: 'btn btn-outline-primary' %>
+  </div>
+<% end %>

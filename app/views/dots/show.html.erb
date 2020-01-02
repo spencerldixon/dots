@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Experiment:</strong>
+  <%= @dot.experiment_id %>
+</p>
+
+<p>
+  <strong>Metric:</strong>
+  <%= @dot.metric_id %>
+</p>
+
+<p>
+  <strong>Value:</strong>
+  <%= @dot.value %>
+</p>
+
+<%= link_to 'Edit', edit_dot_path(@dot) %> |
+<%= link_to 'Back', dots_path %>

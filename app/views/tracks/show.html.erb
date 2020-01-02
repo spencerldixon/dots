@@ -1,0 +1,8 @@
+<h1 class="display-4 mb-4"><%= @track.name %></h1>
+
+<p class="my-4">
+  <%= react_component('charts/Line', { series: @track.metrics.map(&:to_series) }) %>
+</p>
+
+<%= link_to 'Edit', edit_track_path(@track) %> |
+<%= link_to 'Back', tracks_path %>

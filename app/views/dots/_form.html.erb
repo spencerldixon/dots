@@ -1,0 +1,32 @@
+<%= form_with(model: dot, local: true) do |form| %>
+  <% if dot.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(dot.errors.count, "error") %> prohibited this dot from being saved:</h2>
+
+      <ul>
+        <% dot.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :experiment_id %>
+    <%= form.text_field :experiment_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :metric_id %>
+    <%= form.text_field :metric_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :value %>
+    <%= form.text_field :value %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

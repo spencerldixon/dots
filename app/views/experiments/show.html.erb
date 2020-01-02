@@ -1,0 +1,8 @@
+<h1 class="display-4">#<%= @experiment.id %> - <%= @experiment.name %></h1>
+
+<p class="my-4">
+  <%= @experiment.methodology %>
+</p>
+
+<%= link_to 'Edit', edit_track_experiment_path(@track, @experiment) %> |
+<%= link_to 'Back', track_experiments_path(@track) %>

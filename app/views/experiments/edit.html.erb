@@ -1,0 +1,8 @@
+<h1 class="display-4">Editing Experiment</h1>
+
+<div class="my-4">
+  <%= render 'form', experiment: @experiment %>
+</div>
+
+<%= link_to 'Show', track_experiment_path(@track, @experiment) %> |
+<%= link_to 'Back', track_experiments_path(@track) %>

@@ -1,0 +1,21 @@
+<h1 class="display-4"><%= link_to @track.name, track_path(@track) %> > Experiments</h1>
+
+<% if @experiments.any? %>
+<% else %>
+  <p class="lead">You have no experiments set up for this track yet</p>
+<% end %>
+
+<ul class="list-group my-4">
+  <% @experiments.each do |experiment| %>
+    <li class="list-group-item">
+      <div class="row">
+        <div class="col">#<%= experiment.id %></div>
+        <div class="col"><%= experiment.name %></div>
+        <div class="col"><%= link_to 'show', track_experiment_path(@track, experiment) %></div>
+        <div class="col"><%= link_to 'delete', track_experiment_path(@track, experiment), method: :delete, data: {confirm: 'Are you sure?'} %></div>
+      </div>
+    </li>
+  <% end %>
+</ul>
+
+<%= link_to 'new experiment', new_track_experiment_path(@track), class: 'btn btn-outline-primary' %>
