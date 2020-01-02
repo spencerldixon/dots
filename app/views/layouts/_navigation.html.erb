@@ -12,7 +12,7 @@
       </li>
 
       <!-- show menu if track is selected -->
-      <% if @track %>
+      <% if params[:track_id] %>
         <li class="nav-item">
           <%= link_to 'experiments', track_experiments_path(@track), class: 'nav-link' %>
         </li>
